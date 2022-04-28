@@ -26,14 +26,6 @@ client.on('ready', () => {
 
 
 
-
-
-
-
-
-
-
-
 //Main Code
 
 
@@ -96,8 +88,8 @@ async function run(message, serverQueue)
     });
 
     song = {
-      title: results[1].title,
-      url: results[1].link
+      title: results[0].title,
+      url: results[0].link
     }
 
 
@@ -177,7 +169,7 @@ function play(guild, song, message)
 
   player.on(AudioPlayerStatus.Idle, () => {
     serverQueue.songs.shift()
-    play(guild, serverQueue.songs[0])
+    play(guild, serverQueue.songs[0], message)
   })
 
   player.on('error', error => {
