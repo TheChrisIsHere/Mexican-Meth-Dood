@@ -2,3 +2,4 @@
 .env
 .replit
 node_modules/
+test.js
