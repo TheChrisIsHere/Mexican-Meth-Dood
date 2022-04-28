@@ -2,7 +2,7 @@
 I am a noice coder who makes very op discord bots, games on unity/unreal etc. This is a attempt to teach and make a simple music bot for discord in dicordjs v13. You can watch my series on https://www.youtube.com/playlist?list=PLmLxxEK-A_XMAGxDtQbG2jtGKEDnoVDU2
 
 # DISCLAIMER
-This bot is still under devlopment so if there's any error, you can report it on discord.
+This bot is still under devlopment so if there's any error, you can report it on my discord server.
 
 ## How to use this project
 
