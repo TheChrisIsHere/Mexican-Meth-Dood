@@ -1,0 +1,27 @@
+{
+  "name": "yeagabot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/voice": "^0.8.0",
+    "avconv": "^3.1.0",
+    "discord-music-player": "^8.3.2",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "ffmpeg-static": "^4.4.1",
+    "libsodium": "^0.7.9",
+    "libsodium-wrappers": "^0.7.9",
+    "nodemon": "^2.0.15",
+    "youtube-search": "^1.1.6",
+    "ytdl-core": "^4.11.0"
+  }
+}
