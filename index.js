@@ -8,7 +8,7 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const ytdl = require('ytdl-core')
 const yt = require('youtube-search')
 let opts = {
-  maxResults: 2,
+  maxResults: 1,
   key: process.env.api,
   type: 'video'
 };
