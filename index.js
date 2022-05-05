@@ -124,6 +124,7 @@ async function run(message, serverQueue)
         queueContruct.player = player;
         queueContruct.connection = connection
         queueContruct.textChannel = message.channel
+        queueContruct.voiceChannel = voiceChannel
 
 
         play(message.guild, queueContruct.songs[0], message)
@@ -168,8 +169,7 @@ function play(guild, song, message)
   message.channel.send(`Playing **${serverQueue.songs[0].title}**`)
 
   player.on(AudioPlayerStatus.Idle, () => {
-    serverQueue.songs.shift()
-    play(guild, serverQueue.songs[0], message)
+    stop(message, serverQueue, serverQueue.voiceChannel)
   })
 
   player.on('error', error => {
@@ -179,9 +179,9 @@ function play(guild, song, message)
   })
 }
 
-function stop(message, serverQueue)
+function stop(message, serverQueue, stopVoice)
 {
-  if (!message.member.voice.channel) return message.channel.send("You have to be in a voice channel to stop the music!");
+  if (!message.member.voice.channel && !stopVoice) return message.channel.send("You have to be in a voice channel to stop the music!");
 
   if (!serverQueue) return message.channel.send("There isn't anything running You Dum Dum")
 
