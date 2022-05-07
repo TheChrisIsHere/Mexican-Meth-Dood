@@ -206,49 +206,6 @@ function skip(message, serverQueue)
 
 
 
-/* if (!args) return message.reply("Gimme Something To Play You Dum Dum");
-    if (playing == true) return message.reply("I am Already Playing A Music And Queue Will Come In Next Part You Dum Dum");
-
-    if (!message.member.voice.channel) return message.reply("Join A VC First You Dum Dum");
-
-    yt(args.join(' '), opts, function(err, results) {
-      if (err) {
-        console.log(err)
-        return message.reply("Cant find that music")
-      }
-
-      player = createAudioPlayer();
-
-      connection = joinVoiceChannel({
-        channelId: message.member.voice.channel.id,
-        guildId: message.guild.id,
-        adapterCreator: message.guild.voiceAdapterCreator,
-      });
-
-      song = {
-        title: results[1].title,
-        url: results[1].link
-      }
-
-
-      let music = createAudioResource(ytdl(song.url, { highWaterMark: 1 << 25, filter: 'audioonly', format: 'webm' }))
-
-      connection.subscribe(player)
-
-      player.play(music)
-
-      playing = true;
-
-      message.reply(`Playing **${song.title}**`)
-
-       });
-      */
-
-
-
-
-
-
 
 
 
