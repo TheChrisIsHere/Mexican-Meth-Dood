@@ -1,5 +1,6 @@
 const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, entersState, StreamType, VoiceConnectionStatus } = require('@discordjs/voice')
 const ytdl = require('ytdl-core')
+const { MessageEmbed } = require('discord.js')
 
 
 function play(guild, song, message, client)
@@ -20,7 +21,15 @@ function play(guild, song, message, client)
 
   player.play(createAudioResource(ytdl(song.url, { highWaterMark: 1 << 25, filter: 'audioonly', format: 'webm' })))
 
-  message.channel.send(`Playing **${serverQueue.songs[0].title}**`)
+
+  const embed = new MessageEmbed()
+  .setTitle(`Playing **${song.title}**`)
+  .setDescription(`Discription - ${song.namedObject.description}`)
+  .setImage(song.namedObject.thumbnails.high.url)
+  .setURL(song.url)
+  .setColor('RANDOM')
+
+  message.channel.send({ embeds: [embed] })
 
   player.on(AudioPlayerStatus.Idle, () => {
     stop(message, serverQueue, serverQueue.voiceChannel)

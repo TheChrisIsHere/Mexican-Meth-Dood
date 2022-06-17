@@ -9,6 +9,8 @@ let opts = {
   };
   require('dotenv').config();
 
+const { MessageEmbed } = require('discord.js');
+
 module.exports = {
     name: 'play',
     description: 'Play Your Song',
@@ -39,7 +41,8 @@ module.exports = {
 
     song = {
       title: results[0].title,
-      url: results[0].link
+      url: results[0].link,
+      namedObject: results[0]
     }
 
 
@@ -52,7 +55,8 @@ module.exports = {
         connection: null,
         songs: [],
         volume: 50,
-        playing: false
+        playing: false,
+        
       };
 
 
