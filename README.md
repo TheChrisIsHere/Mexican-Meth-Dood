@@ -10,7 +10,7 @@ Note That You can see how to host and run bot better than these examples by http
 1. Fork, Copy or Download the project and integrate it to your code.
 2. Get YouTube Data v3 Credentials to continue
 3. Create a `.env` file and copy `.env.example` and fill out the api and token
-4. Install dependencies by running `npm install`
+4. Install dependencies (modules) by running `npm install`
 5. To start the bot run `node index.js`.
 6. To Host The Bot, watch this video https://www.youtube.com/watch?v=8pRptCERi_g&list=PLmLxxEK-A_XMAGxDtQbG2jtGKEDnoVDU2&index=4&t=2s
 
@@ -22,7 +22,6 @@ Note That You can see how to host and run bot better than these examples by http
 
 1. Shuffle.
 2. Skip More Than 1.
-3. Better UI by embeds.
 4. Loop System.
 5. Lyrics Command
 And Many More
