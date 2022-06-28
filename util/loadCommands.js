@@ -11,7 +11,12 @@ module.exports = (client, path) => {
             console.log(`Loaded ${command.name}!!`)
             if(!command.name) return console.error(`Name Not Given In ${file}`)
             client.commands.set(command.name, command)
-            if(command.aliases) client.aliases.set(command.aliases, command.name)
+            if(command.aliases) 
+            {
+                command.aliases.forEach(aliase => {
+                    client.aliases.set(aliase, command.name)
+                });
+            }
         }
     }
 }
