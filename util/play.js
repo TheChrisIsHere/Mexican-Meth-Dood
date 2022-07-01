@@ -2,7 +2,6 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerSta
 const ytdl = require('ytdl-core')
 const { MessageEmbed } = require('discord.js')
 
-
 function play(guild, song, message, client)
 {
   const serverQueue = client.queue.get(guild.id);
@@ -19,7 +18,11 @@ function play(guild, song, message, client)
 
   connection.subscribe(player)
 
-  player.play(createAudioResource(ytdl(song.url, { highWaterMark: 1 << 25, filter: 'audioonly', format: 'webm' })))
+  let musicResource = createAudioResource(ytdl(song.url, { highWaterMark: 1 << 25, filter: 'audioonly', format: 'webm' }), {inlineVolume: true})
+
+  player.play(musicResource)
+  musicResource.volume.setVolume(serverQueue.defaultvolume);
+  serverQueue.resource = musicResource;
 
 
   const embed = new MessageEmbed()
@@ -32,7 +35,12 @@ function play(guild, song, message, client)
   message.channel.send({ embeds: [embed] })
 
   player.on(AudioPlayerStatus.Idle, () => {
-    stop(message, serverQueue, serverQueue.voiceChannel)
+    if(serverQueue.loop == true)
+    {
+      serverQueue.songs.push(serverQueue.songs[0])
+    }
+    serverQueue.songs.shift();
+    play(message, serverQueue, serverQueue.voiceChannel, client)
   })
 
   player.on('error', error => {

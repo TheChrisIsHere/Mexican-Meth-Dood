@@ -54,11 +54,10 @@ module.exports = {
         player: null,
         connection: null,
         songs: [],
-        volume: 50,
-        playing: false,
-        
+        defaultvolume: 100,
+        loop: false,
+        resource: null
       };
-
 
       client.queue.set(message.guild.id, queueContruct);
 
