@@ -22,6 +22,6 @@ module.exports = {
             vol = 0
         }
         serverQueue.resource.volume.setVolume(vol);
-        return message.reply(`New Volume is ${vol}`)
+        return message.reply(`New Volume is ${vol * 100}`)
     }
 }
