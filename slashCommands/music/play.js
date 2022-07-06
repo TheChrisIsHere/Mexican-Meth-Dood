@@ -91,7 +91,6 @@ module.exports = {
 
         interaction.reply("Some Error Occured")
         console.log(error)
-        
       }
 
       

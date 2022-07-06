@@ -1,9 +1,9 @@
 const { Permissions, MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: 'queue',
+    name: 'volume',
     description: 'Display Queue!!',
-    aliases: ['q'],
+    aliases: ['vol'],
     permissions: [Permissions.FLAGS.CONNECT, Permissions.FLAGS.SPEAK],
     run: async (client, args, message) => {
         const serverQueue = client.queue.get(message.guild.id);

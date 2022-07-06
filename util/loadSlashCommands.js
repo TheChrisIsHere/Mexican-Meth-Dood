@@ -21,7 +21,7 @@ module.exports = (client, path) => {
 
     const rest = new REST({ version: '9' }).setToken(process.env.token);
 
-    rest.put(Routes.applicationGuildCommands("938351107439202304", "949542963963392001"), { body: commands })
+    rest.put(Routes.applicationGuildCommands("938351107439202304", "932654660324581457"), { body: commands })
         .then(() => console.log('Successfully registered application commands.'))
         .catch(console.error);
 }
