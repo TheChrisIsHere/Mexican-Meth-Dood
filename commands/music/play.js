@@ -31,14 +31,6 @@ module.exports = {
       return message.reply("Cant find that music")
     }
 
-    player = createAudioPlayer();
-
-    connection = joinVoiceChannel({
-      channelId: message.member.voice.channel.id,
-      guildId: message.guild.id,
-      adapterCreator: message.guild.voiceAdapterCreator,
-    });
-
     song = {
       title: results[0].title,
       url: results[0].link,
@@ -54,7 +46,7 @@ module.exports = {
         player: null,
         connection: null,
         songs: [],
-        defaultvolume: 100,
+        defaultvolume: 100 / 100,
         loop: false,
         resource: null
       };

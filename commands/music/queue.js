@@ -11,7 +11,7 @@ module.exports = {
 
         let msg = "Songs List!!\n"
         serverQueue.songs.forEach(song => {
-            msg += `${song.title}\n\n`
+            msg += `**${song.title}**\n\n`
         });
 
         message.channel.send(msg);

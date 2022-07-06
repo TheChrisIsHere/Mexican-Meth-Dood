@@ -34,7 +34,7 @@ function play(guild, song, message, client)
 
   message.channel.send({ embeds: [embed] })
 
-  player.on(AudioPlayerStatus.Idle, () => {
+  serverQueue.player.on(AudioPlayerStatus.Idle, () => {
     if(serverQueue.loop == true)
     {
       serverQueue.songs.push(serverQueue.songs[0])
@@ -43,7 +43,7 @@ function play(guild, song, message, client)
     play(message, serverQueue, serverQueue.voiceChannel, client)
   })
 
-  player.on('error', error => {
+  serverQueue.player.on('error', error => {
     console.log(error)
     message.channel.send("Some Error Occured")
     return;
