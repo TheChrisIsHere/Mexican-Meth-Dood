@@ -23,6 +23,7 @@ module.exports = {
   const voiceChannel = message.member.voice.channel;
 
   if (!voiceChannel) return message.reply("Join A VC First You Dum Dum");
+  if(!args2 || args2 === "") return message.reply("There's Nothing To Search For You Dumb!!");
 
 
   yt(args2.join(' '), opts, function(err, results) {

@@ -1,4 +1,5 @@
 const fs = require('fs')
+const chalk = require('chalk')
 module.exports = (client, path) => {
     //Load Commands
     const CommandsFolder = fs.readdirSync(`${path}/commands`)
@@ -8,7 +9,7 @@ module.exports = (client, path) => {
         for(file of commandCategory)
         {
             const command = require(`../commands/${folder}/${file}`)
-            console.log(`Loaded ${command.name}!!`)
+            console.log(chalk.greenBright(`Loaded ${command.name}!!`))
             if(!command.name) return console.error(`Name Not Given In ${file}`)
             client.commands.set(command.name, command)
             if(command.aliases) 

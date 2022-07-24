@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 require('dotenv').config();
@@ -13,7 +14,7 @@ module.exports = (client, path) => {
         for(file of commandCategory)
         {
             const command = require(`../slashCommands/${folder}/${file}`)
-            console.log(`Loaded ${command.data.name} Slash Command!!`);
+            console.log(chalk.blue(`Loaded ${command.data.name} Slash Command!!`));
             client.slashCommands.set(command.data.name, command);
             commands.push(command.data.toJSON());
         }

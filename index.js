@@ -35,6 +35,8 @@ client.commands = new discordjs.Collection()
 client.queue = new Map()
 client.prefix = '-'
 client.aliases = new discordjs.Collection()
+client.buttonCommands = new discordjs.Collection()
+client.helpEmbeds = new discordjs.Collection()
 
 //Make Path
 const fullPath = path.join(__dirname, '/')
@@ -56,7 +58,6 @@ require('./handler/handle')(client, fullPath)
 
 
 client.login(process.env.token)
-
 
 
 
