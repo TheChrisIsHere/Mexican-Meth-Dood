@@ -29,7 +29,6 @@ const path = require('path')
 
 
 //GLOBAL VARIABLES
-
 client.slashCommands = new discordjs.Collection();
 client.commands = new discordjs.Collection()
 client.queue = new Map()
@@ -58,16 +57,3 @@ require('./handler/handle')(client, fullPath)
 
 
 client.login(process.env.token)
-
-
-
-
-
-
-
-
-
-
-
-
-

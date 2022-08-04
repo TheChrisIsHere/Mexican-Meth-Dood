@@ -24,10 +24,12 @@ module.exports = {
 	  content: "Join A VC First You Dum Dum",
 	  ephemeral: true
   });
+
+  args2 = interaction.options.getString('song');
   
+if(!args2 || args2 === "") return message.reply("There's Nothing To Search For You Dumb!!");
 
-
-  yt(interaction.options.getString('song'), opts, function(err, results) {
+  yt(args2, opts, function(err, results) {
     if (err) {
       console.log(err)
       return interaction.reply({
@@ -46,7 +48,8 @@ module.exports = {
 
     song = {
       title: results[0].title,
-      url: results[0].link
+      url: results[0].link,
+      namedObject: results[0]
     }
 
 
