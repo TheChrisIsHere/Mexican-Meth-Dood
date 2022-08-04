@@ -45,15 +45,4 @@ const fullPath = path.join(__dirname, '/')
 require('./handler/handle')(client, fullPath)
 
 
-
-
-
-
-
-
-
-
-
-
-
 client.login(process.env.token)
